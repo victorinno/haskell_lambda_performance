@@ -5,7 +5,7 @@ import Criterion.Main
 add_10                     :: Integer -> Integer
 add_10 x                   =  x + 10
 
-execute_seq x = sum (map add_10 (take 5 [  (i) | i <- [1..]   ] ))
+execute_seq x = sum (map add_10 (take x [  (i) | i <- [1..]   ] ))
 
 main = defaultMain [
   bgroup "execute_seq" [ bench "w1-10"  $ whnf execute_seq 10
